@@ -76,6 +76,18 @@ const Contact: React.FC = () => {
     if (!formData.arrival) {
       errors.arrival = 'Arrival date is required';
       isValid = false;
+    } else {
+      // Überprüfe, ob das Anreisedatum in der Vergangenheit liegt
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Setze Zeit auf 00:00:00 für einen fairen Vergleich
+      
+      const arrivalDate = new Date(formData.arrival);
+      arrivalDate.setHours(0, 0, 0, 0);
+      
+      if (arrivalDate < today) {
+        errors.arrival = t('pastDateSelected');
+        isValid = false;
+      }
     }
 
     if (!formData.departure) {
@@ -99,6 +111,17 @@ const Contact: React.FC = () => {
       
       if (diffDays < 2) {
         errors.departure = t('minStayRequired');
+        isValid = false;
+      }
+      
+      // Überprüfe, ob das Abreisedatum in der Vergangenheit liegt
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Setze Zeit auf 00:00:00 für einen fairen Vergleich
+      
+      departureDate.setHours(0, 0, 0, 0);
+      
+      if (departureDate < today) {
+        errors.departure = t('pastDateSelected');
         isValid = false;
       }
     }
@@ -129,7 +152,7 @@ const Contact: React.FC = () => {
       try {
         if (isProduction()) {
           // Im Produktionsmodus: Formular direkt an Formspree senden
-          const formspreeEndpoint = 'https://formspree.io/f/xzzrzepk'; // Ersetze DEINE_FORMSPREE_ID durch deine eigene ID
+          const formspreeEndpoint = 'https://formspree.io/f/DEINE_FORMSPREE_ID'; // Ersetze DEINE_FORMSPREE_ID durch deine eigene ID
           
           const formData = new FormData(formRef.current as HTMLFormElement);
           
