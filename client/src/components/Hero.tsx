@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero: React.FC = () => {
@@ -25,29 +26,29 @@ const Hero: React.FC = () => {
               {t('welcomeText')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-3">
-              <a 
-                href="/wohnung1" 
+              <Link 
+                to="/wohnung1" 
                 className="px-6 py-3 rounded-md text-center transition duration-200 font-medium text-white" style={{ backgroundColor: '#325670' }}
               >
                 {t('discoverApartment1')}
-              </a>
-              <a 
-                href="/wohnung2" 
+              </Link>
+              <Link 
+                to="/wohnung2" 
                 className="px-6 py-3 rounded-md text-center transition duration-200 font-medium text-white" 
                 style={{ 
                   backgroundColor: '#5A82A5',
                 }}
               >
                 {language === 'de' ? 'Wohnung 2 - Coming Soon' : 'Apartment 2 - Coming Soon'}
-              </a>
+              </Link>
             </div>
             <div>
-              <a 
-                href="/kontakt" 
+              <Link 
+                to="/kontakt" 
                 className="bg-transparent border-2 px-6 py-3 rounded-md text-center transition duration-200 font-medium inline-block" style={{ borderColor: '#325670', color: '#325670' }}
               >
                 {t('sendInquiry')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

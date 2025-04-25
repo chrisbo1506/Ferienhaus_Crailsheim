@@ -100,7 +100,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex flex-wrap items-center justify-between">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <span className="text-2xl font-heading font-bold" style={{ 
               color: '#325670',
               background: 'linear-gradient(to right, #325670, #5A82A5)',
@@ -149,7 +149,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link 
-                href="/wohnung1" 
+                to="/wohnung1" 
                 className="font-medium hover:text-primary transition duration-200 relative py-2 group" 
                 style={{ color: '#463A22' }}
               >
@@ -159,7 +159,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link 
-                href="/wohnung2" 
+                to="/wohnung2" 
                 className="font-medium hover:text-primary transition duration-200 relative py-2 group" 
                 style={{ color: '#463A22' }}
               >
@@ -180,7 +180,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link 
-                href="/kontakt" 
+                to="/kontakt" 
                 className="font-medium hover:text-primary transition duration-200 relative py-2 group" 
                 style={{ color: '#463A22' }}
               >
@@ -228,7 +228,7 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/wohnung1" 
+                  to="/wohnung1" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="block py-2 px-4 font-medium hover:bg-gray-50 rounded-md transition" 
                   style={{ color: '#463A22' }}
@@ -238,7 +238,7 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/wohnung2" 
+                  to="/wohnung2" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="block py-2 px-4 font-medium hover:bg-gray-50 rounded-md transition" 
                   style={{ color: '#463A22' }}
@@ -261,7 +261,7 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/kontakt" 
+                  to="/kontakt" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="block py-2 px-4 font-medium hover:bg-gray-50 rounded-md transition" 
                   style={{ color: '#463A22' }}

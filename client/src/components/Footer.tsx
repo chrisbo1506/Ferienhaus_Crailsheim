@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {
@@ -24,9 +25,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-heading font-semibold mb-4 text-white">{t('legal')}</h3>
             <ul>
-              <li><a href="/impressum" className="text-white hover:text-gray-200 transition duration-200">{t('imprint')}</a></li>
-              <li><a href="/datenschutz" className="text-white hover:text-gray-200 transition duration-200">{t('privacy_policy')}</a></li>
-              <li><a href="/agb" className="text-white hover:text-gray-200 transition duration-200">{t('terms')}</a></li>
+              <li><Link to="/impressum" className="text-white hover:text-gray-200 transition duration-200">{t('imprint')}</Link></li>
+              <li><Link to="/datenschutz" className="text-white hover:text-gray-200 transition duration-200">{t('privacy_policy')}</Link></li>
+              <li><Link to="/agb" className="text-white hover:text-gray-200 transition duration-200">{t('terms')}</Link></li>
             </ul>
           </div>
         </div>
