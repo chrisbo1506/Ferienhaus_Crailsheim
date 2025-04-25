@@ -1,6 +1,7 @@
 import React, { useState, useRef, FormEvent } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { apiRequest } from '@/lib/queryClient';
 
 interface FormData {
   apartment: 'wohnung1' | 'wohnung2';
@@ -111,37 +112,65 @@ const Contact: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
     if (validateForm()) {
-      // In a real implementation, this would send the form data to a server
-      // For now, we'll just show a success message
-      toast({
-        title: t('inquirySent'),
-        description: `${formData.name}, ${formData.email}, ${formData.persons} persons, ${formData.arrival} - ${formData.departure}`,
-      });
+      setIsSubmitting(true);
       
-      // Reset the form
-      if (formRef.current) {
-        formRef.current.reset();
-        setFormData({
-          apartment: 'wohnung1',
-          name: '',
-          email: '',
-          phone: '',
-          persons: 2,
-          arrival: '',
-          departure: '',
-          message: '',
-          privacy: false
+      try {
+        // Sende Anfrage an unseren Server-Endpunkt
+        const response = await apiRequest('POST', '/api/contact', formData);
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          // Erfolgreiche Übermittlung
+          toast({
+            title: t('inquirySent'),
+            description: t('emailConfirmation'),
+          });
+          
+          // Formular zurücksetzen
+          if (formRef.current) {
+            formRef.current.reset();
+            setFormData({
+              apartment: 'wohnung1',
+              name: '',
+              email: '',
+              phone: '',
+              persons: 2,
+              arrival: '',
+              departure: '',
+              message: '',
+              privacy: false
+            });
+          }
+        } else {
+          // Server hat einen Fehler zurückgegeben
+          toast({
+            title: t('errorOccurred'),
+            description: data.message || t('pleaseTryAgain'),
+            variant: 'destructive'
+          });
+        }
+      } catch (error) {
+        console.error('Fehler beim Senden des Formulars:', error);
+        toast({
+          title: t('errorOccurred'),
+          description: t('connectionError'),
+          variant: 'destructive'
         });
+      } finally {
+        setIsSubmitting(false);
       }
     } else {
-      // Show first error
+      // Zeige den ersten Fehler an
       const firstError = Object.values(formErrors)[0];
       toast({
-        title: 'Validation Error',
+        title: t('validationError'),
         description: firstError,
         variant: 'destructive'
       });
@@ -300,10 +329,11 @@ const Contact: React.FC = () => {
             <div className="md:col-span-2">
               <button 
                 type="submit" 
+                disabled={isSubmitting}
                 style={{ backgroundColor: '#325670' }}
-                className="text-white px-6 py-3 rounded-md hover:opacity-90 transition duration-200"
+                className="text-white px-6 py-3 rounded-md hover:opacity-90 transition duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {t('send')}
+                {isSubmitting ? t('sending') + '...' : t('send')}
               </button>
             </div>
           </form>

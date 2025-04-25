@@ -130,6 +130,12 @@ export const translations: Record<Language, TranslationMap> = {
     personRange: "Die Anzahl der Personen muss zwischen 1 und 6 liegen.",
     inquirySent: "Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.",
     optional: "optional",
+    sending: "Wird gesendet",
+    validationError: "Überprüfen Sie Ihre Eingaben",
+    errorOccurred: "Ein Fehler ist aufgetreten",
+    emailConfirmation: "Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+    pleaseTryAgain: "Bitte versuchen Sie es später erneut.",
+    connectionError: "Verbindungsprobleme. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
 
     // Footer
     contact_footer: "Kontakt",
@@ -264,6 +270,12 @@ export const translations: Record<Language, TranslationMap> = {
     personRange: "The number of persons must be between 1 and 6.",
     inquirySent: "Thank you for your inquiry! We will get back to you shortly.",
     optional: "optional",
+    sending: "Sending",
+    validationError: "Please check your input",
+    errorOccurred: "An error occurred",
+    emailConfirmation: "Your inquiry has been successfully sent. We will get back to you as soon as possible.",
+    pleaseTryAgain: "Please try again later.",
+    connectionError: "Connection problems. Please check your internet connection and try again.",
 
     // Footer
     contact_footer: "Contact",
