@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ferienhaus-crailsheim
+    env: static
+    buildCommand: bash build-static.sh
+    staticPublishPath: ./dist/public
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
