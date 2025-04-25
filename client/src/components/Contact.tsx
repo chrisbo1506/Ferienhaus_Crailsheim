@@ -114,6 +114,12 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Prüft, ob die Website auf einer Produktionsumgebung (z.B. Render) läuft
+  const isProduction = () => {
+    return window.location.hostname !== 'localhost' && 
+           !window.location.hostname.includes('replit.dev');
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
@@ -121,40 +127,88 @@ const Contact: React.FC = () => {
       setIsSubmitting(true);
       
       try {
-        // Sende Anfrage an unseren Server-Endpunkt
-        const response = await apiRequest('POST', '/api/contact', formData);
-        
-        const data = await response.json();
-        
-        if (data.success) {
-          // Erfolgreiche Übermittlung
-          toast({
-            title: t('inquirySent'),
-            description: t('emailConfirmation'),
+        if (isProduction()) {
+          // Im Produktionsmodus: Formular direkt an Formspree senden
+          const formspreeEndpoint = 'https://formspree.io/f/DEINE_FORMSPREE_ID'; // Ersetze DEINE_FORMSPREE_ID durch deine eigene ID
+          
+          const formData = new FormData(formRef.current as HTMLFormElement);
+          
+          const response = await fetch(formspreeEndpoint, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
           });
           
-          // Formular zurücksetzen
-          if (formRef.current) {
-            formRef.current.reset();
-            setFormData({
-              apartment: 'wohnung1',
-              name: '',
-              email: '',
-              phone: '',
-              persons: 2,
-              arrival: '',
-              departure: '',
-              message: '',
-              privacy: false
+          const data = await response.json();
+          
+          if (response.ok) {
+            // Erfolgreiche Übermittlung via Formspree
+            toast({
+              title: t('inquirySent'),
+              description: t('emailConfirmation'),
+            });
+            
+            // Formular zurücksetzen
+            if (formRef.current) {
+              formRef.current.reset();
+              setFormData({
+                apartment: 'wohnung1',
+                name: '',
+                email: '',
+                phone: '',
+                persons: 2,
+                arrival: '',
+                departure: '',
+                message: '',
+                privacy: false
+              });
+            }
+          } else {
+            // Formspree hat einen Fehler zurückgegeben
+            toast({
+              title: t('errorOccurred'),
+              description: data.error || t('pleaseTryAgain'),
+              variant: 'destructive'
             });
           }
         } else {
-          // Server hat einen Fehler zurückgegeben
-          toast({
-            title: t('errorOccurred'),
-            description: data.message || t('pleaseTryAgain'),
-            variant: 'destructive'
-          });
+          // In der Entwicklungsumgebung: Lokalen API-Endpunkt verwenden
+          const response = await apiRequest('POST', '/api/contact', formData);
+          
+          const data = await response.json();
+          
+          if (data.success) {
+            // Erfolgreiche Übermittlung über lokale API
+            toast({
+              title: t('inquirySent'),
+              description: t('emailConfirmation'),
+            });
+            
+            // Formular zurücksetzen
+            if (formRef.current) {
+              formRef.current.reset();
+              setFormData({
+                apartment: 'wohnung1',
+                name: '',
+                email: '',
+                phone: '',
+                persons: 2,
+                arrival: '',
+                departure: '',
+                message: '',
+                privacy: false
+              });
+            }
+          } else {
+            // Server hat einen Fehler zurückgegeben
+            toast({
+              title: t('errorOccurred'),
+              description: data.message || t('pleaseTryAgain'),
+              variant: 'destructive'
+            });
+          }
         }
       } catch (error) {
         console.error('Fehler beim Senden des Formulars:', error);
@@ -186,6 +240,12 @@ const Contact: React.FC = () => {
           <p className="mb-6">{t('contactText')}</p>
           
           <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Verstecktes Feld für Formspree, das die Ziel-E-Mail-Adresse festlegt */}
+            <input type="hidden" name="_replyto" value="fewo.rossfeld@gmail.com" />
+            
+            {/* Verstecktes Feld für Formspree, das die E-Mail-Betreffzeile festlegt */}
+            <input type="hidden" name="_subject" value="Neue Anfrage vom Ferienhaus Crailsheim-Roßfeld" />
+            
             <div className="md:col-span-2">
               <label htmlFor="apartment" className="block mb-2 font-medium">{t('apartmentSelect')}</label>
               <select 
