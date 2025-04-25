@@ -180,7 +180,7 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link 
-                to="/kontakt" 
+                to="/kontakt#top" 
                 className="font-medium hover:text-primary transition duration-200 relative py-2 group" 
                 style={{ color: '#463A22' }}
               >
@@ -261,7 +261,7 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <Link 
-                  to="/kontakt" 
+                  to="/kontakt#top" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="block py-2 px-4 font-medium hover:bg-gray-50 rounded-md transition" 
                   style={{ color: '#463A22' }}

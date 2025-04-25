@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
             </div>
             <div>
               <Link 
-                to="/kontakt" 
+                to="/kontakt#top" 
                 className="bg-transparent border-2 px-6 py-3 rounded-md text-center transition duration-200 font-medium inline-block" style={{ borderColor: '#325670', color: '#325670' }}
               >
                 {t('sendInquiry')}

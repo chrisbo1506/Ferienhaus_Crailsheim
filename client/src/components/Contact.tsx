@@ -256,7 +256,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="kontakt" className="bg-white py-12">
-      <div className="container mx-auto px-4">
+      <div id="top" className="container mx-auto px-4">
         <h2 className="text-3xl font-heading font-bold text-center text-primary mb-8">{t('contactBooking')}</h2>
         
         <div className="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-md p-6">
