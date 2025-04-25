@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
       try {
         if (isProduction()) {
           // Im Produktionsmodus: Formular direkt an Formspree senden
-          const formspreeEndpoint = 'https://formspree.io/f/DEINE_FORMSPREE_ID'; // Ersetze DEINE_FORMSPREE_ID durch deine eigene ID
+          const formspreeEndpoint = 'https://formspree.io/f/xzzrzepk'; // Ersetze DEINE_FORMSPREE_ID durch deine eigene ID
           
           const formData = new FormData(formRef.current as HTMLFormElement);
           
