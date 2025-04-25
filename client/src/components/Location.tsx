@@ -122,8 +122,8 @@ const Location: React.FC = () => {
                     {t('sports')}
                   </h4>
                   <ul className="space-y-2 pl-7 list-disc">
-                    <li>{t('fitnessStudio1')} (0,2 km)</li>
-                    <li>{t('fitnessStudio2')} (0,4 km)</li>
+                    <li>{t('fitnessStudio1')} (0,8 km)</li>
+                    <li>Bel Vital (0,4 km)</li>
                   </ul>
                 </div>
                 

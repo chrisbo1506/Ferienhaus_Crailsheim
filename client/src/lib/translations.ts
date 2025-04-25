@@ -41,7 +41,7 @@ export const translations: Record<Language, TranslationMap> = {
     cinemaCity: "Kino Cinecity",
     beatBowl: "Beat Bowl",
     fitnessStudio1: "Fitness First",
-    fitnessStudio2: "Clever Fit",
+    fitnessStudio2: "Bel Vital",
     locationDescription: "Unsere Ferienwohnung liegt in einer ruhigen Wohngegend, dennoch sind alle Einrichtungen des alltäglichen Bedarfs und die Innenstadt von Crailsheim schnell erreichbar. Genießen Sie die perfekte Mischung aus Ruhe und guter Anbindung.",
 
     // Apartment 1
@@ -182,7 +182,7 @@ export const translations: Record<Language, TranslationMap> = {
     cinemaCity: "Cinema Cinecity",
     beatBowl: "Beat Bowl",
     fitnessStudio1: "Fitness First",
-    fitnessStudio2: "Clever Fit",
+    fitnessStudio2: "Bel Vital",
     locationDescription: "Our vacation apartment is located in a quiet residential area, yet all daily amenities and downtown Crailsheim are quickly accessible. Enjoy the perfect mix of tranquility and good connections.",
 
     // Apartment 1
