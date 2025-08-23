@@ -372,7 +372,7 @@ const ApartmentOne: React.FC = () => {
             <p className="mb-4">
               {language === 'de' ? 'Das Badezimmer ist mit einer praktischen Eckbadewanne inkl. Duschwand ausgestattet. Zusätzlich stehen eine Waschmaschine und ein Trockner zur Verfügung – besonders praktisch für Langzeitgäste. Das WC befindet sich in einem separaten Raum.' : 'The bathroom is equipped with a practical corner bathtub including shower wall. Additionally, a washing machine and dryer are available - especially practical for long-term guests. The toilet is located in a separate room.'}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 justify-items-center">
               <div 
                 className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
                 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '250px' }}
@@ -381,23 +381,6 @@ const ApartmentOne: React.FC = () => {
                 <img
                   src="/img/Bad_1.JPEG"
                   alt="Badezimmer"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '250px' }}
-                onClick={() => openImageModal('/img/Bad_2.JPEG', 'Badezimmer weitere Ansicht')}
-              >
-                <img
-                  src="/img/Bad_2.JPEG"
-                  alt="Badezimmer weitere Ansicht"
                   style={{ 
                     maxWidth: '100%', 
                     maxHeight: '100%',
@@ -519,7 +502,7 @@ const ApartmentOne: React.FC = () => {
               <ul className="list-disc pl-6 text-gray-700">
                 <li>{language === 'de' ? 'Vollfunktionsfähige Küche mit allen Geräten' : 'Fully functional kitchen with all appliances'}</li>
                 <li>{language === 'de' ? 'Geschirr und Besteck' : 'Dishes and cutlery'}</li>
-                <li>{language === 'de' ? 'Waschmaschine & Wäscheständer' : 'Washing machine & clothes rack'}</li>
+                <li>{language === 'de' ? 'Waschmaschine & Wäschetrockner' : 'Washing machine & dryer'}</li>
                 <li>{language === 'de' ? 'Bügeleisen & Bügelbrett' : 'Iron & ironing board'}</li>
                 <li>{language === 'de' ? 'Staubsauger und Reinigungsmittel' : 'Vacuum cleaner and cleaning supplies'}</li>
               </ul>
@@ -541,11 +524,11 @@ const ApartmentOne: React.FC = () => {
                 <ul className="space-y-2">
                   <li className="flex justify-between">
                     <span>{t('twoPeople')}</span>
-                    <span className="font-medium">€82{t('perNight')}</span>
+                    <span className="font-medium">€98{t('perNight')}</span>
                   </li>
                   <li className="flex justify-between">
                     <span>{t('additionalPerson')}</span>
-                    <span className="font-medium">+€25{t('perNight')}</span>
+                    <span className="font-medium">+€30{t('perNight')}</span>
                   </li>
                   <li className="flex justify-between">
                     <span>{t('maxOccupancy')}</span>
@@ -561,12 +544,8 @@ const ApartmentOne: React.FC = () => {
                 <h4 className="text-xl font-heading font-medium mb-4">{t('discounts')}</h4>
                 <ul className="space-y-2">
                   <li className="flex justify-between">
-                    <span>{t('sevenNights')}</span>
-                    <span className="font-medium">10% {t('discount')}</span>
-                  </li>
-                  <li className="flex justify-between">
                     <span>{t('fourWeeks')}</span>
-                    <span className="font-medium">20% {t('discount')}</span>
+                    <span className="font-medium">10% {t('discount')}</span>
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-gray-200">
@@ -595,7 +574,7 @@ const ApartmentOne: React.FC = () => {
         
         <div className="text-center">
           <p className="text-lg font-medium mb-2">
-            {language === 'de' ? '📍 Adresse: Im Schanzbuck, 74564 Crailsheim-Roßfeld' : '📍 Address: Im Schanzbuck, 74564 Crailsheim-Roßfeld'}
+            {language === 'de' ? '📍 Adresse: Im Schanzbuck 48, 74564 Crailsheim-Roßfeld' : '📍 Address: Im Schanzbuck 48, 74564 Crailsheim-Roßfeld'}
           </p>
           <a href="/kontakt" className="text-lg hover:underline block" style={{ color: '#325670' }}>
             {language === 'de' ? 'Jetzt anfragen & buchen – wir freuen uns auf Ihren Besuch!' : 'Inquire & book now - we look forward to your visit!'}

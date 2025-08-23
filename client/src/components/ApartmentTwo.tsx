@@ -10,7 +10,7 @@ const ApartmentTwo: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-heading font-bold mb-8" style={{ color: "#4A4A4A" }}>
-            {language === 'de' ? 'In Kürze verfügbar' : 'Coming Soon'}
+            {language === 'de' ? 'Wohnung 2 - Bereit für Gäste' : 'Apartment 2 - Ready for Guests'}
           </h2>
           
           <div className="bg-white p-8 rounded-lg shadow-lg" style={{ border: '1px solid #E6DCC6' }}>
@@ -28,19 +28,68 @@ const ApartmentTwo: React.FC = () => {
             
             <p className="text-xl mb-6" style={{ color: '#463A22' }}>
               {language === 'de' 
-                ? 'Unsere zweite Ferienwohnung wird derzeit renoviert und steht in Kürze zur Verfügung.' 
-                : 'Our second vacation apartment is currently being renovated and will be available soon.'}
+                ? 'Unsere gemütliche zweite Ferienwohnung ist fertig und steht zur Buchung bereit.' 
+                : 'Our cozy second vacation apartment is ready and available for booking.'}
             </p>
             
-            <p className="text-lg mb-10" style={{ color: '#463A22' }}>
+            {/* Pricing */}
+            <div className="bg-gray-50 rounded-lg p-6 shadow-md mb-8">
+              <h3 className="text-2xl font-heading font-semibold mb-6" style={{ color: '#325670' }}>
+                {language === 'de' ? 'Preise' : 'Pricing'}
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-xl font-heading font-medium mb-4" style={{ color: '#463A22' }}>
+                    {language === 'de' ? 'Grundpreise' : 'Base Prices'}
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex justify-between">
+                      <span>{language === 'de' ? '2 Personen' : 'Two people'}</span>
+                      <span className="font-medium">€98{language === 'de' ? '/Nacht' : '/night'}</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>{language === 'de' ? 'Zusätzliche Person' : 'Additional person'}</span>
+                      <span className="font-medium">+€30{language === 'de' ? '/Nacht' : '/night'}</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>{language === 'de' ? 'Maximale Belegung' : 'Max occupancy'}</span>
+                      <span className="font-medium">3 {language === 'de' ? 'Personen' : 'people'}</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>{language === 'de' ? 'Mindestaufenthalt' : 'Minimum stay'}</span>
+                      <span className="font-medium">2 {language === 'de' ? 'Nächte' : 'nights'}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xl font-heading font-medium mb-4" style={{ color: '#463A22' }}>
+                    {language === 'de' ? 'Rabatte' : 'Discounts'}
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex justify-between">
+                      <span>{language === 'de' ? 'Ab 4 Wochen' : 'Four weeks or more'}</span>
+                      <span className="font-medium">10% {language === 'de' ? 'Rabatt' : 'discount'}</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <p className="text-sm">
+                      {language === 'de' ? 'Alle Preise verstehen sich inklusive aller Nebenkosten.' : 'All prices include all additional costs.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-lg mb-6" style={{ color: '#463A22' }}>
               {language === 'de' 
-                ? 'Für weitere Informationen oder um über die Verfügbarkeit informiert zu werden, kontaktieren Sie uns bitte.' 
-                : 'For more information or to be notified about availability, please contact us.'}
+                ? 'Kontaktieren Sie uns für Buchungsanfragen oder weitere Informationen.' 
+                : 'Contact us for booking inquiries or more information.'}
             </p>
             
-            <div className="flex justify-center">
+            <div className="flex justify-center space-x-4">
               <a href="/kontakt" className="px-6 py-3 text-white rounded-md hover:opacity-90 transition duration-300 shadow-md font-medium" style={{ backgroundColor: '#325670' }}>
-                {language === 'de' ? 'Kontaktieren Sie uns' : 'Contact Us'}
+                {language === 'de' ? 'Jetzt anfragen & buchen' : 'Inquire & Book Now'}
               </a>
             </div>
           </div>

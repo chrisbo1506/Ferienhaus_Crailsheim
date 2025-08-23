@@ -19,7 +19,7 @@ const Location: React.FC = () => {
           <div>
             <div className="bg-white p-6 rounded-lg shadow-lg" style={{ border: '1px solid #E6DCC6' }}>
               <h3 className="text-xl font-heading font-semibold mb-4" style={{ color: "#4A4A4A" }}>{t('address')}</h3>
-              <p className="mb-5 text-lg">Im Schanzbuck<br />74564 Crailsheim-Roßfeld</p>
+              <p className="mb-5 text-lg">Im Schanzbuck 48<br />74564 Crailsheim-Roßfeld</p>
               
               <div className="rounded-lg overflow-hidden mb-3 shadow-md" style={{ background: '#f0f0f0', minHeight: '250px' }}>
                 {language === 'de' ? (
@@ -147,10 +147,45 @@ const Location: React.FC = () => {
           </div>
         </div>
         
-        <div className="text-center bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto" style={{ border: '1px solid #E6DCC6' }}>
+        <div className="text-center bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto mb-12" style={{ border: '1px solid #E6DCC6' }}>
           <p className="text-lg" style={{ color: '#463A22' }}>
             {t('locationDescription')}
           </p>
+        </div>
+        
+        {/* Verfügbarkeitskalender / Availability Calendar */}
+        <div id="availability" className="pt-8">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-heading font-bold mb-3" style={{ color: "#4A4A4A" }}>
+              {t('checkAvailability')}
+            </h3>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#463A22' }}>
+              {t('checkAvailabilityDesc')}
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto" style={{ border: '1px solid #E6DCC6' }}>
+            <iframe 
+              src="https://calendar.google.com/calendar/embed?src=fewo.rossfeld%40gmail.com&ctz=Europe%2FBerlin" 
+              style={{ border: 0 }} 
+              width="100%" 
+              height="500" 
+              frameBorder="0" 
+              scrolling="no"
+              title="Availability Calendar"
+            />
+          </div>
+          
+          <div className="text-center mt-6">
+            <a href="/kontakt#top" className="inline-block px-6 py-3 rounded-md transition-all duration-300 hover:shadow-lg" style={{ 
+              backgroundColor: '#325670', 
+              color: 'white',
+              boxShadow: '0 4px 14px 0 rgba(50, 86, 112, 0.25)'
+            }}>
+              {t('inquireAndBook')}
+            </a>
+          </div>
         </div>
       </div>
     </section>

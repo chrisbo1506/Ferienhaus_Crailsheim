@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-heading font-semibold mb-4 text-white">
               {language === 'de' ? 'Ferienhaus Crailsheim-Roßfeld' : 'Vacation Home Crailsheim-Roßfeld'}
             </h3>
-            <p className="text-white">Im Schanzbuck</p>
+            <p className="text-white">Im Schanzbuck 48</p>
             <p className="text-white">74564 Crailsheim-Roßfeld</p>
           </div>
           
