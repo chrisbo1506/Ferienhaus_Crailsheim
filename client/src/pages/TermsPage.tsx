@@ -22,7 +22,7 @@ const TermsPage: React.FC = () => {
               <section>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#325670' }}>1. Geltungsbereich</h2>
                 <p className="mb-3">
-                  Diese Allgemeinen Geschäftsbedingungen gelten für Verträge über die mietweise Überlassung von Ferienwohnungen im Ferienhaus Crailsheim-Roßfeld, Im Schanzbuck, 74564 Crailsheim-Roßfeld.
+                  Diese Allgemeinen Geschäftsbedingungen gelten für Verträge über die mietweise Überlassung von Ferienwohnungen im Ferienhaus Crailsheim-Roßfeld, Im Schanzbuck 48, 74564 Crailsheim-Roßfeld.
                 </p>
               </section>
               
@@ -197,7 +197,7 @@ const TermsPage: React.FC = () => {
               <section>
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#325670' }}>1. Scope</h2>
                 <p className="mb-3">
-                  These General Terms and Conditions apply to contracts for the rental of vacation apartments in Ferienhaus Crailsheim-Roßfeld, Im Schanzbuck, 74564 Crailsheim-Roßfeld.
+                  These General Terms and Conditions apply to contracts for the rental of vacation apartments in Ferienhaus Crailsheim-Roßfeld, Im Schanzbuck 48, 74564 Crailsheim-Roßfeld.
                 </p>
               </section>
               

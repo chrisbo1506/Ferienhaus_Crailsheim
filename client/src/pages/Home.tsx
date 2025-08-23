@@ -98,7 +98,7 @@ const Home: React.FC = () => {
                   </li>
                 </ul>
                 <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold" style={{ color: "#4A4A4A" }}>€82 / {language === 'de' ? 'Nacht' : 'night'}</span>
+                  <span className="text-xl font-bold" style={{ color: "#4A4A4A" }}>€98 / {language === 'de' ? 'Nacht' : 'night'}</span>
                   <Link href="/wohnung1" className="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 transition duration-300 font-medium">
                     {language === 'de' ? 'Details ansehen' : 'View Details'}
                   </Link>
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
                     <path d="M9 15h6"></path>
                   </svg>
                   <h4 className="text-xl font-heading font-medium" style={{ color: "#4A4A4A" }}>
-                    {language === 'de' ? 'Demnächst verfügbar' : 'Coming Soon'}
+                    {language === 'de' ? 'Bereit für Gäste' : 'Ready for Guests'}
                   </h4>
                 </div>
               </div>
@@ -128,12 +128,12 @@ const Home: React.FC = () => {
                 </h3>
                 <p className="mb-4" style={{ color: '#333333' }}>
                   {language === 'de' 
-                    ? 'Unsere zweite Ferienwohnung wird derzeit renoviert und steht in Kürze zur Verfügung.' 
-                    : 'Our second vacation apartment is currently being renovated and will be available soon.'}
+                    ? 'Unsere gemütliche zweite Ferienwohnung ist bereit für bis zu 3 Gäste.' 
+                    : 'Our cozy second vacation apartment is ready for up to 3 guests.'}
                 </p>
                 <div className="h-[108px] flex items-end justify-between">
-                  <span className="text-xl font-bold opacity-50" style={{ color: "#4A4A4A" }}>
-                    {language === 'de' ? 'In Kürze' : 'Coming soon'}
+                  <span className="text-xl font-bold" style={{ color: "#4A4A4A" }}>
+                    €98 / {language === 'de' ? 'Nacht' : 'night'}
                   </span>
                   <Link href="/wohnung2" className="px-4 py-2 border-2 rounded-md transition duration-300 font-medium" style={{ borderColor: '#606C38', color: '#606C38' }}>
                     {language === 'de' ? 'Mehr erfahren' : 'Learn More'}

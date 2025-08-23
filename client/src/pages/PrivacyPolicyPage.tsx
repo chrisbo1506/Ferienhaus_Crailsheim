@@ -24,7 +24,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <p className="mb-3">
                   Ferienhaus Crailsheim-Roßfeld<br />
                   Claudia Boger<br />
-                  Im Schanzbuck<br />
+                  Im Schanzbuck 48<br />
                   74564 Crailsheim-Roßfeld<br />
                   E-Mail: fewo.rossfeld@gmail.com
                 </p>
@@ -144,7 +144,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <p className="mb-3">
                   Ferienhaus Crailsheim-Roßfeld<br />
                   Claudia Boger<br />
-                  Im Schanzbuck<br />
+                  Im Schanzbuck 48<br />
                   74564 Crailsheim-Roßfeld<br />
                   Email: fewo.rossfeld@gmail.com
                 </p>

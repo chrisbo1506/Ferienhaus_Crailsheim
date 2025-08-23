@@ -19,7 +19,7 @@ const ImprintPage: React.FC = () => {
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#325670' }}>Angaben gemäß § 5 TMG</h2>
                 <p className="mb-3">
                   Claudia Boger<br />
-                  Im Schanzbuck<br />
+                  Im Schanzbuck 48<br />
                   74564 Crailsheim-Roßfeld
                 </p>
               </section>
@@ -35,7 +35,7 @@ const ImprintPage: React.FC = () => {
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#325670' }}>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
                 <p className="mb-3">
                   Claudia Boger<br />
-                  Im Schanzbuck<br />
+                  Im Schanzbuck 48<br />
                   74564 Crailsheim-Roßfeld
                 </p>
               </section>
@@ -81,7 +81,7 @@ const ImprintPage: React.FC = () => {
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#325670' }}>Information according to § 5 TMG</h2>
                 <p className="mb-3">
                   Claudia Boger<br />
-                  Im Schanzbuck<br />
+                  Im Schanzbuck 48<br />
                   74564 Crailsheim-Roßfeld
                 </p>
               </section>
@@ -97,7 +97,7 @@ const ImprintPage: React.FC = () => {
                 <h2 className="text-xl font-semibold mb-3" style={{ color: '#325670' }}>Responsible for content according to § 55 Abs. 2 RStV</h2>
                 <p className="mb-3">
                   Claudia Boger<br />
-                  Im Schanzbuck<br />
+                  Im Schanzbuck 48<br />
                   74564 Crailsheim-Roßfeld
                 </p>
               </section>
