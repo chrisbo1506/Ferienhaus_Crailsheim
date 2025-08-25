@@ -130,7 +130,7 @@ const ApartmentOne: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Ausgestattet mit einem 160 cm breiten Doppelbett. Warme Farbgestaltung sorgt für eine ruhige und behagliche Atmosphäre – ideal zum Abschalten nach einem langen Arbeitstag.' : 'Equipped with a 160 cm wide double bed. Warm color design creates a quiet and cozy atmosphere - ideal for unwinding after a long working day.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
                 <div 
                   className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-300 hover:shadow-2xl" 
                   style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
@@ -156,6 +156,23 @@ const ApartmentOne: React.FC = () => {
                   <img
                     src="/img/braunes_Zimmer_2.JPEG"
                     alt="Braunes Schlafzimmer Ansicht 2"
+                    style={{ 
+                      maxWidth: '100%', 
+                      maxHeight: '100%',
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                  />
+                </div>
+                <div 
+                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-300 hover:shadow-2xl" 
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                  onClick={() => openImageModal('/img/braunes_Zimmer_3.JPEG', 'Braunes Schlafzimmer Ansicht 3')}
+                >
+                  <img
+                    src="/img/braunes_Zimmer_3.JPEG"
+                    alt="Braunes Schlafzimmer Ansicht 3"
                     style={{ 
                       maxWidth: '100%', 
                       maxHeight: '100%',
@@ -220,7 +237,7 @@ const ApartmentOne: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Ebenfalls mit einem 140 cm breiten Bett ausgestattet, wirkt dieses Zimmer besonders hell und freundlich. Es eignet sich ideal als Rückzugsort für Paare oder Einzelpersonen.' : 'Also equipped with a 140 cm wide bed, this room appears particularly bright and friendly. It is ideal as a retreat for couples or individuals.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 <div 
                   className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
                   style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
@@ -246,6 +263,40 @@ const ApartmentOne: React.FC = () => {
                   <img
                     src="/img/weißes_Zimmer_2.JPEG"
                     alt="Weißes Schlafzimmer Ansicht 2"
+                    style={{ 
+                      maxWidth: '100%', 
+                      maxHeight: '100%',
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                  />
+                </div>
+                <div 
+                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                  onClick={() => openImageModal('/img/weißes_Zimmer_3.JPEG', 'Weißes Schlafzimmer Ansicht 3')}
+                >
+                  <img
+                    src="/img/weißes_Zimmer_3.JPEG"
+                    alt="Weißes Schlafzimmer Ansicht 3"
+                    style={{ 
+                      maxWidth: '100%', 
+                      maxHeight: '100%',
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                  />
+                </div>
+                <div 
+                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                  onClick={() => openImageModal('/img/weißes_Zimmer_4.JPEG', 'Weißes Schlafzimmer Ansicht 4')}
+                >
+                  <img
+                    src="/img/weißes_Zimmer_4.JPEG"
+                    alt="Weißes Schlafzimmer Ansicht 4"
                     style={{ 
                       maxWidth: '100%', 
                       maxHeight: '100%',
@@ -327,22 +378,75 @@ const ApartmentOne: React.FC = () => {
             <p className="mb-4" style={{ color: '#333333' }}>
               {language === 'de' ? 'Im separaten Wohnzimmer befindet sich eine gemütliche Sitzecke mit Relaxfunktion sowie ein Smart-TV. Von hier aus gelangen Sie direkt auf die Terrasse.' : 'The separate living room has a cozy seating area with relaxation function and a smart TV. From here you have direct access to the terrace.'}
             </p>
-            <div 
-              className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}
-              onClick={() => openImageModal('/img/Wohnzimmer.JPG', 'Wohnzimmer')}
-            >
-              <img
-                src="/img/Wohnzimmer.JPG"
-                alt="Wohnzimmer"
-                style={{ 
-                  maxWidth: '100%', 
-                  maxHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
-                  objectFit: 'contain'
-                }}
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+              <div 
+                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                onClick={() => openImageModal('/img/Wohnzimmer.JPG', 'Wohnzimmer Ansicht 1')}
+              >
+                <img
+                  src="/img/Wohnzimmer.JPG"
+                  alt="Wohnzimmer Ansicht 1"
+                  style={{ 
+                    maxWidth: '100%', 
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+              <div 
+                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                onClick={() => openImageModal('/img/Wohnzimmer_2.JPEG', 'Wohnzimmer Ansicht 2')}
+              >
+                <img
+                  src="/img/Wohnzimmer_2.JPEG"
+                  alt="Wohnzimmer Ansicht 2"
+                  style={{ 
+                    maxWidth: '100%', 
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+              <div 
+                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                onClick={() => openImageModal('/img/Wohnzimmer_3.JPEG', 'Wohnzimmer Ansicht 3')}
+              >
+                <img
+                  src="/img/Wohnzimmer_3.JPEG"
+                  alt="Wohnzimmer Ansicht 3"
+                  style={{ 
+                    maxWidth: '100%', 
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+              <div 
+                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
+                onClick={() => openImageModal('/img/Wohnzimmer_4.JPEG', 'Wohnzimmer Ansicht 4')}
+              >
+                <img
+                  src="/img/Wohnzimmer_4.JPEG"
+                  alt="Wohnzimmer Ansicht 4"
+                  style={{ 
+                    maxWidth: '100%', 
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -552,6 +656,26 @@ const ApartmentOne: React.FC = () => {
                   <p className="text-sm">{t('note')}</p>
                 </div>
               </div>
+            </div>
+            
+            {/* Seasonal Surcharges */}
+            <div className="mt-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-r-lg">
+              <h4 className="text-lg font-heading font-medium mb-3" style={{ color: '#D2691E' }}>
+                {language === 'de' ? '🎪 Saisonale Aufpreise' : '🎪 Seasonal Surcharges'}
+              </h4>
+              <p className="text-sm mb-3" style={{ color: '#463A22' }}>
+                {language === 'de' ? 'Zu bestimmten Saisonzeiten berechnen wir einen Aufpreis von 25€ pro Nacht (nur auf den Grundpreis):' : 'During certain seasonal periods, we charge a surcharge of €25 per night (only on the base price):'}
+              </p>
+              <ul className="space-y-1 text-sm">
+                <li className="flex justify-between">
+                  <span>{language === 'de' ? 'Volksfest:' : 'Folk Festival:'}</span>
+                  <span className="font-medium">17.09. bis 24.09. (+€25{language === 'de' ? '/Nacht' : '/night'})</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>{language === 'de' ? 'Weihnachten & Silvester:' : 'Christmas & New Year:'}</span>
+                  <span className="font-medium">23.12. bis 02.01. (+€25{language === 'de' ? '/Nacht' : '/night'})</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
