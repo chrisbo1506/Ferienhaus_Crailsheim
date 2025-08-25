@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'wouter';
 import ApartmentTwo from '@/components/ApartmentTwo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ApartmentTwoPage: React.FC = () => {
   const { language } = useLanguage();
+  const [location] = useLocation();
+  
+  useEffect(() => {
+    // Scroll to top when component mounts or location changes
+    window.scrollTo(0, 0);
+  }, [location]);
   
   return (
     <div className="pb-16">

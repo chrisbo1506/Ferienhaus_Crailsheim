@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'wouter';
 import Contact from '@/components/Contact';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactPage: React.FC = () => {
   const { language } = useLanguage();
+  const [location] = useLocation();
   
   useEffect(() => {
-    // Scroll to top when component mounts
+    // Scroll to top when component mounts or location changes
     window.scrollTo(0, 0);
-  }, []);
+  }, [location]);
   
   return (
     <div className="pb-16" id="top">
