@@ -81,7 +81,7 @@ const ApartmentOne: React.FC = () => {
         </div>
         
         {/* Eigenständiger Zugang & flexibler Check-In */}
-        <div id="checkin" className="mb-8 pt-10 -mt-10">
+        <div id="checkin" className="mb-8 pt-20 -mt-20">
           <div className="flex items-center mb-5">
             <div className="bg-[#325670] bg-opacity-10 p-3 rounded-full mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#325670" }}>
@@ -141,7 +141,7 @@ const ApartmentOne: React.FC = () => {
         </div>
         
         {/* Drei individuell gestaltete Schlafzimmer */}
-        <div id="bedrooms" className="mb-8 pt-10 -mt-10">
+        <div id="bedrooms" className="mb-8 pt-20 -mt-20">
           <div className="flex items-center mb-5">
             <div className="bg-[#325670] bg-opacity-10 p-3 rounded-full mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#325670" }}>
@@ -209,7 +209,7 @@ const ApartmentOne: React.FC = () => {
         </div>
         
         {/* Küche & Essbereich */}
-        <div id="kitchen" className="mb-8 pt-10 -mt-10">
+        <div id="kitchen" className="mb-8 pt-20 -mt-20">
           <div className="flex items-center mb-5">
             <div className="bg-[#325670] bg-opacity-10 p-3 rounded-full mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#325670" }}>
@@ -246,7 +246,7 @@ const ApartmentOne: React.FC = () => {
         </div>
         
         {/* Wohnzimmer */}
-        <div id="livingroom" className="mb-8 pt-10 -mt-10">
+        <div id="livingroom" className="mb-8 pt-20 -mt-20">
           <div className="flex items-center mb-5">
             <div className="bg-[#325670] bg-opacity-10 p-3 rounded-full mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#325670" }}>
@@ -273,7 +273,7 @@ const ApartmentOne: React.FC = () => {
         </div>
         
         {/* Badezimmer & separates WC */}
-        <div id="bathroom" className="mb-8 pt-10 -mt-10">
+        <div id="bathroom" className="mb-8 pt-20 -mt-20">
           <div className="flex items-center mb-5">
             <div className="bg-[#325670] bg-opacity-10 p-3 rounded-full mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "#325670" }}>
@@ -408,7 +408,7 @@ const ApartmentOne: React.FC = () => {
         </div>
         
         {/* Pricing */}
-        <div id="prices" className="mb-10 pt-10 -mt-10">
+        <div id="prices" className="mb-10 pt-20 -mt-20">
           <h3 className="text-2xl font-heading font-semibold mb-6">{t('pricing')}</h3>
           
           <div className="bg-gray-50 rounded-lg p-6 shadow-md">
