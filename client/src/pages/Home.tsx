@@ -128,15 +128,35 @@ const Home: React.FC = () => {
                 </h3>
                 <p className="mb-4" style={{ color: '#333333' }}>
                   {language === 'de' 
-                    ? 'Unsere gemütliche zweite Ferienwohnung ist bereit für bis zu 3 Gäste.' 
-                    : 'Our cozy second vacation apartment is ready for up to 3 guests.'}
+                    ? 'Gemütliche 3-Zimmer-Wohnung im Obergeschoss mit Dachterrasse – ideal für Paare und kleine Gruppen.' 
+                    : 'Cozy 3-room apartment on the upper floor with rooftop terrace – ideal for couples and small groups.'}
                 </p>
-                <div className="h-[108px] flex items-end justify-between">
+                <ul className="mb-6 space-y-2" style={{ color: '#333333' }}>
+                  <li className="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    {language === 'de' ? 'Zwei separate Schlafzimmer' : 'Two separate bedrooms'}
+                  </li>
+                  <li className="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    {language === 'de' ? 'Voll ausgestattete Küche' : 'Fully equipped kitchen'}
+                  </li>
+                  <li className="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    {language === 'de' ? 'Private Dachterrasse' : 'Private rooftop terrace'}
+                  </li>
+                </ul>
+                <div className="flex justify-between items-center">
                   <span className="text-xl font-bold" style={{ color: "#4A4A4A" }}>
                     €98 / {language === 'de' ? 'Nacht' : 'night'}
                   </span>
-                  <Link href="/wohnung2" className="px-4 py-2 border-2 rounded-md transition duration-300 font-medium" style={{ borderColor: '#606C38', color: '#606C38' }}>
-                    {language === 'de' ? 'Mehr erfahren' : 'Learn More'}
+                  <Link href="/wohnung2" className="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 transition duration-300 font-medium">
+                    {language === 'de' ? 'Details ansehen' : 'View Details'}
                   </Link>
                 </div>
               </div>
