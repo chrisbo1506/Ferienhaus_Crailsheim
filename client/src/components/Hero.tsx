@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
                   backgroundColor: '#5A82A5',
                 }}
               >
-                {language === 'de' ? 'Wohnung 2 - Coming Soon' : 'Apartment 2 - Coming Soon'}
+                {language === 'de' ? 'Wohnung 2 entdecken' : 'Discover Apartment 2'}
               </Link>
             </div>
             <div>

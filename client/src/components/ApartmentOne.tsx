@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Gallery from './Gallery';
 import GalleryGrid from './GalleryGrid';
 import ImageModal from './ImageModal';
+import ImageCarousel from './ImageCarousel';
 
 const ApartmentOne: React.FC = () => {
   const { t, language } = useLanguage();
@@ -26,6 +27,37 @@ const ApartmentOne: React.FC = () => {
     { src: '/img/Kueche_1.JPEG', alt: language === 'de' ? 'Küche Ansicht 1' : 'Kitchen View 1' },
     { src: '/img/Kueche_2.JPEG', alt: language === 'de' ? 'Küche Ansicht 2' : 'Kitchen View 2' },
     { src: '/img/Kueche_3.JPEG', alt: language === 'de' ? 'Küche Ansicht 3' : 'Kitchen View 3' },
+  ];
+
+  // Bildsammlungen für Carousels
+  const brownBedroomImages = [
+    { src: '/img/braunes_Zimmer_1.JPEG', alt: language === 'de' ? 'Braunes Schlafzimmer Ansicht 1' : 'Brown Bedroom View 1' },
+    { src: '/img/braunes_Zimmer_2.JPEG', alt: language === 'de' ? 'Braunes Schlafzimmer Ansicht 2' : 'Brown Bedroom View 2' },
+    { src: '/img/braunes_Zimmer_3.JPEG', alt: language === 'de' ? 'Braunes Schlafzimmer Ansicht 3' : 'Brown Bedroom View 3' },
+  ];
+
+  const blackBedroomImages = [
+    { src: '/img/schwarzes_Zimmer_1.JPG', alt: language === 'de' ? 'Schwarzes Schlafzimmer Ansicht 1' : 'Black Bedroom View 1' },
+    { src: '/img/schwarzes_Zimmer_2.JPEG', alt: language === 'de' ? 'Schwarzes Schlafzimmer Ansicht 2' : 'Black Bedroom View 2' },
+  ];
+
+  const whiteBedroomImages = [
+    { src: '/img/weißes_Zimmer_1.JPEG', alt: language === 'de' ? 'Weißes Schlafzimmer Ansicht 1' : 'White Bedroom View 1' },
+    { src: '/img/weißes_Zimmer_2.JPEG', alt: language === 'de' ? 'Weißes Schlafzimmer Ansicht 2' : 'White Bedroom View 2' },
+    { src: '/img/weißes_Zimmer_3.JPEG', alt: language === 'de' ? 'Weißes Schlafzimmer Ansicht 3' : 'White Bedroom View 3' },
+    { src: '/img/weißes_Zimmer_4.JPEG', alt: language === 'de' ? 'Weißes Schlafzimmer Ansicht 4' : 'White Bedroom View 4' },
+  ];
+
+  const livingRoomImages = [
+    { src: '/img/Wohnzimmer.JPG', alt: language === 'de' ? 'Wohnzimmer Ansicht 1' : 'Living Room View 1' },
+    { src: '/img/Wohnzimmer_2.JPEG', alt: language === 'de' ? 'Wohnzimmer Ansicht 2' : 'Living Room View 2' },
+    { src: '/img/Wohnzimmer_3.JPEG', alt: language === 'de' ? 'Wohnzimmer Ansicht 3' : 'Living Room View 3' },
+    { src: '/img/Wohnzimmer_4.JPEG', alt: language === 'de' ? 'Wohnzimmer Ansicht 4' : 'Living Room View 4' },
+  ];
+
+  const bathroomImages = [
+    { src: '/img/Bad_1.JPEG', alt: language === 'de' ? 'Badezimmer' : 'Bathroom' },
+    { src: '/img/Toilette.JPEG', alt: language === 'de' ? 'Separates WC' : 'Separate Toilet' },
   ];
 
   return (
@@ -130,59 +162,11 @@ const ApartmentOne: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Ausgestattet mit einem 160 cm breiten Doppelbett. Warme Farbgestaltung sorgt für eine ruhige und behagliche Atmosphäre – ideal zum Abschalten nach einem langen Arbeitstag.' : 'Equipped with a 160 cm wide double bed. Warm color design creates a quiet and cozy atmosphere - ideal for unwinding after a long working day.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-300 hover:shadow-2xl" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/braunes_Zimmer_1.JPEG', 'Braunes Schlafzimmer Ansicht 1')}
-                >
-                  <img
-                    src="/img/braunes_Zimmer_1.JPEG"
-                    alt="Braunes Schlafzimmer Ansicht 1"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-300 hover:shadow-2xl" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/braunes_Zimmer_2.JPEG', 'Braunes Schlafzimmer Ansicht 2')}
-                >
-                  <img
-                    src="/img/braunes_Zimmer_2.JPEG"
-                    alt="Braunes Schlafzimmer Ansicht 2"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform duration-300 hover:shadow-2xl" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/braunes_Zimmer_3.JPEG', 'Braunes Schlafzimmer Ansicht 3')}
-                >
-                  <img
-                    src="/img/braunes_Zimmer_3.JPEG"
-                    alt="Braunes Schlafzimmer Ansicht 3"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-              </div>
+              <ImageCarousel 
+                images={brownBedroomImages}
+                onImageClick={openImageModal}
+                className="mt-4"
+              />
             </div>
             
             <div className="mb-8">
@@ -192,42 +176,11 @@ const ApartmentOne: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Dieses Zimmer verfügt über ein 140 cm breites Bett mit stilvollen dunklen Möbeln. Der reduzierte Look und funktionale Schnitt machen es besonders beliebt bei Alleinreisenden oder Geschäftsreisenden.' : 'This room has a 140 cm wide bed with stylish dark furniture. The reduced look and functional design make it particularly popular with solo travelers or business travelers.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/schwarzes_Zimmer_1.JPG', 'Schwarzes Schlafzimmer Ansicht 1')}
-                >
-                  <img
-                    src="/img/schwarzes_Zimmer_1.JPG"
-                    alt="Schwarzes Schlafzimmer Ansicht 1"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/schwarzes_Zimmer_2.JPEG', 'Schwarzes Schlafzimmer Ansicht 2')}  
-                >
-                  <img
-                    src="/img/schwarzes_Zimmer_2.JPEG"
-                    alt="Schwarzes Schlafzimmer Ansicht 2"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-              </div>
+              <ImageCarousel 
+                images={blackBedroomImages}
+                onImageClick={openImageModal}
+                className="mt-4"
+              />
             </div>
             
             <div className="mb-4">
@@ -237,76 +190,11 @@ const ApartmentOne: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Ebenfalls mit einem 140 cm breiten Bett ausgestattet, wirkt dieses Zimmer besonders hell und freundlich. Es eignet sich ideal als Rückzugsort für Paare oder Einzelpersonen.' : 'Also equipped with a 140 cm wide bed, this room appears particularly bright and friendly. It is ideal as a retreat for couples or individuals.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/weißes_Zimmer_1.JPEG', 'Weißes Schlafzimmer Ansicht 1')}
-                >
-                  <img
-                    src="/img/weißes_Zimmer_1.JPEG"
-                    alt="Weißes Schlafzimmer Ansicht 1"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/weißes_Zimmer_2.JPEG', 'Weißes Schlafzimmer Ansicht 2')}
-                >
-                  <img
-                    src="/img/weißes_Zimmer_2.JPEG"
-                    alt="Weißes Schlafzimmer Ansicht 2"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/weißes_Zimmer_3.JPEG', 'Weißes Schlafzimmer Ansicht 3')}
-                >
-                  <img
-                    src="/img/weißes_Zimmer_3.JPEG"
-                    alt="Weißes Schlafzimmer Ansicht 3"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                  onClick={() => openImageModal('/img/weißes_Zimmer_4.JPEG', 'Weißes Schlafzimmer Ansicht 4')}
-                >
-                  <img
-                    src="/img/weißes_Zimmer_4.JPEG"
-                    alt="Weißes Schlafzimmer Ansicht 4"
-                    style={{ 
-                      maxWidth: '100%', 
-                      maxHeight: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-              </div>
+              <ImageCarousel 
+                images={whiteBedroomImages}
+                onImageClick={openImageModal}
+                className="mt-4"
+              />
             </div>
             
             <div className="mt-8 mb-4 bg-gray-50 p-6 rounded-lg shadow-sm">
@@ -348,12 +236,10 @@ const ApartmentOne: React.FC = () => {
               <li>{language === 'de' ? 'Staubsauger, Bügelbrett, Dampfbügeleisen' : 'Vacuum cleaner, ironing board, steam iron'}</li>
             </ul>
             <div className="mb-6">
-              {/* Küchenbildergalerie mit Klickfunktion */}
-              <GalleryGrid 
-                images={kitchenImages} 
-                mainImageIndex={0} 
-                mainImageHeight={400} 
-                regularImageHeight={250} 
+              <ImageCarousel 
+                images={kitchenImages}
+                onImageClick={openImageModal}
+                className="mt-4"
               />
             </div>
           </div>
@@ -378,76 +264,11 @@ const ApartmentOne: React.FC = () => {
             <p className="mb-4" style={{ color: '#333333' }}>
               {language === 'de' ? 'Im separaten Wohnzimmer befindet sich eine gemütliche Sitzecke mit Relaxfunktion sowie ein Smart-TV. Von hier aus gelangen Sie direkt auf die Terrasse.' : 'The separate living room has a cozy seating area with relaxation function and a smart TV. From here you have direct access to the terrace.'}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                onClick={() => openImageModal('/img/Wohnzimmer.JPG', 'Wohnzimmer Ansicht 1')}
-              >
-                <img
-                  src="/img/Wohnzimmer.JPG"
-                  alt="Wohnzimmer Ansicht 1"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                onClick={() => openImageModal('/img/Wohnzimmer_2.JPEG', 'Wohnzimmer Ansicht 2')}
-              >
-                <img
-                  src="/img/Wohnzimmer_2.JPEG"
-                  alt="Wohnzimmer Ansicht 2"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                onClick={() => openImageModal('/img/Wohnzimmer_3.JPEG', 'Wohnzimmer Ansicht 3')}
-              >
-                <img
-                  src="/img/Wohnzimmer_3.JPEG"
-                  alt="Wohnzimmer Ansicht 3"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}
-                onClick={() => openImageModal('/img/Wohnzimmer_4.JPEG', 'Wohnzimmer Ansicht 4')}
-              >
-                <img
-                  src="/img/Wohnzimmer_4.JPEG"
-                  alt="Wohnzimmer Ansicht 4"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-            </div>
+            <ImageCarousel 
+              images={livingRoomImages}
+              onImageClick={openImageModal}
+              className="mt-4"
+            />
           </div>
         </div>
         
@@ -476,42 +297,11 @@ const ApartmentOne: React.FC = () => {
             <p className="mb-4">
               {language === 'de' ? 'Das Badezimmer ist mit einer praktischen Eckbadewanne inkl. Duschwand ausgestattet. Zusätzlich stehen eine Waschmaschine und ein Trockner zur Verfügung – besonders praktisch für Langzeitgäste. Das WC befindet sich in einem separaten Raum.' : 'The bathroom is equipped with a practical corner bathtub including shower wall. Additionally, a washing machine and dryer are available - especially practical for long-term guests. The toilet is located in a separate room.'}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 justify-items-center">
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '250px' }}
-                onClick={() => openImageModal('/img/Bad_1.JPEG', 'Badezimmer')}
-              >
-                <img
-                  src="/img/Bad_1.JPEG"
-                  alt="Badezimmer"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer transform transition-transform hover:scale-[1.01]" 
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '250px' }}
-                onClick={() => openImageModal('/img/Toilette.JPEG', 'Separates WC')}
-              >
-                <img
-                  src="/img/Toilette.JPEG"
-                  alt="Separates WC"
-                  style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '100%',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-            </div>
+            <ImageCarousel 
+              images={bathroomImages}
+              onImageClick={openImageModal}
+              className="mt-6"
+            />
           </div>
         </div>
         

@@ -30,7 +30,7 @@ const Location: React.FC = () => {
                     scrolling="no" 
                     marginHeight={0} 
                     marginWidth={0} 
-                    src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=de&amp;q=Im+Schanzbuck,+74564+Crailsheim&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=de&amp;q=Im+Schanzbuck+48,+74564+Crailsheim&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     title="Location Map"
                     className="border-0"
                     style={{ display: 'block' }}
@@ -43,7 +43,7 @@ const Location: React.FC = () => {
                     scrolling="no" 
                     marginHeight={0} 
                     marginWidth={0} 
-                    src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=en&amp;q=Im+Schanzbuck,+74564+Crailsheim&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=en&amp;q=Im+Schanzbuck+48,+74564+Crailsheim&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     title="Location Map"
                     className="border-0"
                     style={{ display: 'block' }}
@@ -103,6 +103,8 @@ const Location: React.FC = () => {
                     {t('leisure')}
                   </h4>
                   <ul className="space-y-2 pl-7 list-disc">
+                    <li>Saunalandschaft Parc Vital (2,1 km)</li>
+                    <li>Freibad Crailsheim (2,1 km)</li>
                     <li>{t('cinemaCity')} (3,3 km)</li>
                     <li>{t('beatBowl')} (6,6 km)</li>
                   </ul>
