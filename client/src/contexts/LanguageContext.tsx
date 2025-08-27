@@ -64,6 +64,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     // Zugriff auf die Übersetzungen über unsere neuen Types
     const translationsForLanguage = translations[language];
     
+    
     // Wir verwenden den type guard mit hasOwnProperty
     if (Object.prototype.hasOwnProperty.call(translationsForLanguage, key)) {
       return translationsForLanguage[key];
