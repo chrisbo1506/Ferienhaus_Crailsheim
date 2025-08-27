@@ -159,11 +159,11 @@ const Location: React.FC = () => {
         <div id="availability" className="pt-8">
           <div className="text-center mb-10">
             <h3 className="text-2xl font-heading font-bold mb-3" style={{ color: "#4A4A4A" }}>
-              {t('checkAvailability')}
+              {language === 'de' ? 'Verfügbarkeit prüfen' : 'Check Availability'}
             </h3>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#463A22' }}>
-              {t('checkAvailabilityDesc')}
+              {language === 'de' ? 'Überprüfen Sie hier die Verfügbarkeit unserer Ferienwohnung' : 'Check the availability of our vacation apartment here'}
             </p>
           </div>
           
