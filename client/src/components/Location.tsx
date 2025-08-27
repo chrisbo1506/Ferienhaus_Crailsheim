@@ -185,7 +185,7 @@ const Location: React.FC = () => {
               color: 'white',
               boxShadow: '0 4px 14px 0 rgba(50, 86, 112, 0.25)'
             }}>
-              {t('inquireAndBook')}
+              {language === 'de' ? 'Jetzt anfragen & buchen' : 'Inquire & Book Now'}
             </a>
           </div>
         </div>
