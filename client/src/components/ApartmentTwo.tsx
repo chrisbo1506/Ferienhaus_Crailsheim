@@ -1,6 +1,25 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ImageModal from '@/components/ImageModal';
+import ImageCarousel from '@/components/ImageCarousel';
+import entranceImage from '@assets/Eingang_1756409965599.jpeg';
+import masterBedroom1 from '@assets/Schlafzimmer_1_1756410315488.jpeg';
+import masterBedroom2 from '@assets/Schlafzimmer_2_1756410315490.jpeg';
+import masterBedroom3 from '@assets/Schlafzimmer_3_1756410315490.jpeg';
+import smallBedroom from '@assets/kleines_Zimmer_1756410485531.jpeg';
+import kitchen1 from '@assets/Küche_1_1756410727198.jpeg';
+import kitchen2 from '@assets/Küche_2_1756410727199.jpeg';
+import kitchen3 from '@assets/Küche_3_1756410727201.jpeg';
+import livingRoom1 from '@assets/Wohnzimmer_1_1756410848822.jpeg';
+import livingRoom2 from '@assets/Wohnzimmer_2_1756410848824.jpeg';
+import livingRoom3 from '@assets/Wohnzimmer_3_1756410848825.jpeg';
+import livingRoom4 from '@assets/Wohnzimmer_4_1756410848825.jpeg';
+import bathroom1 from '@assets/Bad_1_1756411014162.jpeg';
+import bathroom2 from '@assets/Bad_2_1756411014162.jpeg';
+import toilet from '@assets/Toilet_1756411014163.jpeg';
+import terrace1 from '@assets/Dachterrasse_1_1756411223934.jpeg';
+import terrace2 from '@assets/Dachterrasse_2_1756411223936.jpeg';
+import flurImage from '@assets/Flur_1756412375651.jpeg';
 
 const ApartmentTwo: React.FC = () => {
   const { language, t } = useLanguage();
@@ -16,6 +35,52 @@ const ApartmentTwo: React.FC = () => {
     setSelectedImage(null);
     setSelectedImageAlt('');
   };
+
+  // Eingangsbild-Daten für ImageCarousel
+  const entranceImages = [
+    { src: entranceImage, alt: language === 'de' ? 'Eingangsbereich' : 'Entrance Area' }
+  ];
+
+  // Hauptschlafzimmer-Bilder für ImageCarousel
+  const masterBedroomImages = [
+    { src: masterBedroom1, alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 1' : 'Master Bedroom View 1' },
+    { src: masterBedroom2, alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 2' : 'Master Bedroom View 2' },
+    { src: flurImage, alt: language === 'de' ? 'Flur zum Schlafzimmer' : 'Hallway to Bedroom' },
+    { src: masterBedroom3, alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 3' : 'Master Bedroom View 3' }
+  ];
+
+  // Kleines Schlafzimmer-Bilder für ImageCarousel
+  const smallBedroomImages = [
+    { src: smallBedroom, alt: language === 'de' ? 'Kleines Schlafzimmer' : 'Small Bedroom' }
+  ];
+
+  // Küchen-Bilder für ImageCarousel
+  const kitchenImages = [
+    { src: kitchen1, alt: language === 'de' ? 'Küche Ansicht 1' : 'Kitchen View 1' },
+    { src: kitchen2, alt: language === 'de' ? 'Küche Ansicht 2' : 'Kitchen View 2' },
+    { src: kitchen3, alt: language === 'de' ? 'Küche Ansicht 3' : 'Kitchen View 3' }
+  ];
+
+  // Wohnzimmer-Bilder für ImageCarousel
+  const livingRoomImages = [
+    { src: livingRoom1, alt: language === 'de' ? 'Wohnzimmer Ansicht 1' : 'Living Room View 1' },
+    { src: livingRoom2, alt: language === 'de' ? 'Wohnzimmer Ansicht 2' : 'Living Room View 2' },
+    { src: livingRoom3, alt: language === 'de' ? 'Wohnzimmer Ansicht 3' : 'Living Room View 3' },
+    { src: livingRoom4, alt: language === 'de' ? 'Wohnzimmer Ansicht 4' : 'Living Room View 4' }
+  ];
+
+  // Badezimmer & WC-Bilder für ImageCarousel
+  const bathroomImages = [
+    { src: bathroom1, alt: language === 'de' ? 'Badezimmer Ansicht 1' : 'Bathroom View 1' },
+    { src: bathroom2, alt: language === 'de' ? 'Badezimmer Ansicht 2' : 'Bathroom View 2' },
+    { src: toilet, alt: language === 'de' ? 'Separates WC' : 'Separate Toilet' }
+  ];
+
+  // Dachterrassen-Bilder für ImageCarousel
+  const terraceImages = [
+    { src: terrace1, alt: language === 'de' ? 'Dachterrasse Ansicht 1' : 'Roof Terrace View 1' },
+    { src: terrace2, alt: language === 'de' ? 'Dachterrasse Ansicht 2' : 'Roof Terrace View 2' }
+  ];
 
   return (
     <section id="wohnung2" className="bg-white py-16">
@@ -56,19 +121,11 @@ const ApartmentTwo: React.FC = () => {
             <p className="mb-6 leading-relaxed" style={{ color: '#333333' }}>
               {language === 'de' ? 'Der Zugang zur Wohnung erfolgt über ein digitales Codeschloss – Sie erhalten den Code vor Ihrer Ankunft und können flexibel ein- und auschecken.' : 'Access to the apartment is via a digital code lock - you will receive the code before your arrival and can check in and out flexibly.'}
             </p>
-            <div 
-              className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center mx-auto" 
-              style={{ height: '300px', maxWidth: '600px' }}
-            >
-              <div className="text-center text-gray-500">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <p className="text-sm">
-                  {language === 'de' ? 'Eingangsbereich' : 'Entrance Area'}
-                </p>
-              </div>
-            </div>
+            <ImageCarousel 
+              images={entranceImages}
+              onImageClick={openImageModal}
+              className="mt-4"
+            />
           </div>
         </div>
         
@@ -94,47 +151,11 @@ const ApartmentTwo: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Das Hauptschlafzimmer verfügt über ein Queensize Bett für zwei Personen. Der helle und freundliche Raum bietet viel Platz und Stauraum für einen entspannten Aufenthalt.' : 'The master bedroom features a queen-size bed for two people. The bright and friendly room offers plenty of space and storage for a relaxing stay.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                  style={{ height: '300px' }}
-                >
-                  <div className="text-center text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm">
-                      {language === 'de' ? 'Hauptschlafzimmer 1' : 'Master Bedroom 1'}
-                    </p>
-                  </div>
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                  style={{ height: '300px' }}
-                >
-                  <div className="text-center text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm">
-                      {language === 'de' ? 'Hauptschlafzimmer 2' : 'Master Bedroom 2'}
-                    </p>
-                  </div>
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                  style={{ height: '300px' }}
-                >
-                  <div className="text-center text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm">
-                      {language === 'de' ? 'Hauptschlafzimmer 3' : 'Master Bedroom 3'}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ImageCarousel 
+                images={masterBedroomImages}
+                onImageClick={openImageModal}
+                className="mt-4"
+              />
             </div>
             
             <div className="mb-8">
@@ -144,34 +165,11 @@ const ApartmentTwo: React.FC = () => {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {language === 'de' ? 'Das kleinere Schlafzimmer ist mit einem bequemen Einzelbett und Smart TV ausgestattet.' : 'The smaller bedroom is equipped with a comfortable single bed and smart TV.'}
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                  style={{ height: '300px' }}
-                >
-                  <div className="text-center text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm">
-                      {language === 'de' ? 'Einzelzimmer 1' : 'Single Room 1'}
-                    </p>
-                  </div>
-                </div>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                  style={{ height: '300px' }}
-                >
-                  <div className="text-center text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm">
-                      {language === 'de' ? 'Einzelzimmer 2' : 'Single Room 2'}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <ImageCarousel 
+                images={smallBedroomImages}
+                onImageClick={openImageModal}
+                className="mt-4"
+              />
             </div>
             
             <div className="mt-8 mb-4 bg-gray-50 p-6 rounded-lg shadow-sm">
@@ -230,60 +228,11 @@ const ApartmentTwo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Küche 1' : 'Kitchen 1'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Küche 2' : 'Kitchen 2'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Nespresso' : 'Nespresso'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Essbereich' : 'Dining Area'}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ImageCarousel 
+              images={kitchenImages}
+              onImageClick={openImageModal}
+              className="mt-6"
+            />
           </div>
         </div>
 
@@ -327,60 +276,11 @@ const ApartmentTwo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '300px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">
-                    {language === 'de' ? 'Sitzecke' : 'Seating Area'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '300px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">
-                    {language === 'de' ? 'Esstisch' : 'Dining Table'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '300px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">
-                    {language === 'de' ? 'Smart-TV' : 'Smart TV'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '300px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">
-                    {language === 'de' ? 'Gesamtansicht' : 'Overview'}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ImageCarousel 
+              images={livingRoomImages}
+              onImageClick={openImageModal}
+              className="mt-4"
+            />
           </div>
         </div>
         
@@ -409,34 +309,11 @@ const ApartmentTwo: React.FC = () => {
             <p className="mb-4">
               {language === 'de' ? 'Das Badezimmer ist mit einer Badewanne und einer Dusche ausgestattet. Zusätzlich stehen eine Waschmaschine und ein Trockner zur Verfügung – besonders praktisch für Langzeitgäste. Das WC befindet sich in einem separaten Raum.' : 'The bathroom is equipped with a bathtub and a shower. Additionally, a washing machine and dryer are available - especially practical for long-term guests. The toilet is located in a separate room.'}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 justify-items-center">
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '300px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">
-                    {language === 'de' ? 'Badezimmer' : 'Bathroom'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '300px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">
-                    {language === 'de' ? 'Separates WC' : 'Separate Toilet'}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ImageCarousel 
+              images={bathroomImages}
+              onImageClick={openImageModal}
+              className="mt-4"
+            />
           </div>
         </div>
         
@@ -482,60 +359,11 @@ const ApartmentTwo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Terrassenübersicht' : 'Terrace Overview'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Überdachung' : 'Covered Area'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Sitzgruppe' : 'Seating Group'}
-                  </p>
-                </div>
-              </div>
-              <div 
-                className="rounded-xl overflow-hidden shadow-xl cursor-pointer bg-gray-200 flex items-center justify-center" 
-                style={{ height: '250px' }}
-              >
-                <div className="text-center text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-xs">
-                    {language === 'de' ? 'Ausblick' : 'View'}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ImageCarousel 
+              images={terraceImages}
+              onImageClick={openImageModal}
+              className="mt-6"
+            />
           </div>
         </div>
 
