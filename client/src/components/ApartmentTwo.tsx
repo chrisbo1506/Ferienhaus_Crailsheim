@@ -2,24 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ImageModal from '@/components/ImageModal';
 import ImageCarousel from '@/components/ImageCarousel';
-import entranceImage from '@assets/Eingang_1756409965599.jpeg';
-import masterBedroom1 from '@assets/Schlafzimmer_1_1756410315488.jpeg';
-import masterBedroom2 from '@assets/Schlafzimmer_2_1756410315490.jpeg';
-import masterBedroom3 from '@assets/Schlafzimmer_3_1756410315490.jpeg';
-import smallBedroom from '@assets/kleines_Zimmer_1756410485531.jpeg';
-import kitchen1 from '@assets/Küche_1_1756410727198.jpeg';
-import kitchen2 from '@assets/Küche_2_1756410727199.jpeg';
-import kitchen3 from '@assets/Küche_3_1756410727201.jpeg';
-import livingRoom1 from '@assets/Wohnzimmer_1_1756410848822.jpeg';
-import livingRoom2 from '@assets/Wohnzimmer_2_1756410848824.jpeg';
-import livingRoom3 from '@assets/Wohnzimmer_3_1756410848825.jpeg';
-import livingRoom4 from '@assets/Wohnzimmer_4_1756410848825.jpeg';
-import bathroom1 from '@assets/Bad_1_1756411014162.jpeg';
-import bathroom2 from '@assets/Bad_2_1756411014162.jpeg';
-import toilet from '@assets/Toilet_1756411014163.jpeg';
-import terrace1 from '@assets/Dachterrasse_1_1756411223934.jpeg';
-import terrace2 from '@assets/Dachterrasse_2_1756411223936.jpeg';
-import flurImage from '@assets/Flur_1756412375651.jpeg';
+// Alle Bilder verwenden jetzt das statische /img/ System
 
 const ApartmentTwo: React.FC = () => {
   const { language, t } = useLanguage();
@@ -38,48 +21,48 @@ const ApartmentTwo: React.FC = () => {
 
   // Eingangsbild-Daten für ImageCarousel
   const entranceImages = [
-    { src: entranceImage, alt: language === 'de' ? 'Eingangsbereich' : 'Entrance Area' }
+    { src: '/img/Eingang_1756409965599.jpeg', alt: language === 'de' ? 'Eingangsbereich' : 'Entrance Area' }
   ];
 
   // Hauptschlafzimmer-Bilder für ImageCarousel
   const masterBedroomImages = [
-    { src: masterBedroom1, alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 1' : 'Master Bedroom View 1' },
-    { src: masterBedroom2, alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 2' : 'Master Bedroom View 2' },
-    { src: flurImage, alt: language === 'de' ? 'Flur zum Schlafzimmer' : 'Hallway to Bedroom' },
-    { src: masterBedroom3, alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 3' : 'Master Bedroom View 3' }
+    { src: '/img/Schlafzimmer_1_1756410315488.jpeg', alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 1' : 'Master Bedroom View 1' },
+    { src: '/img/Schlafzimmer_2_1756410315490.jpeg', alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 2' : 'Master Bedroom View 2' },
+    { src: '/img/Flur_1756412375651.jpeg', alt: language === 'de' ? 'Flur zum Schlafzimmer' : 'Hallway to Bedroom' },
+    { src: '/img/Schlafzimmer_3_1756410315490.jpeg', alt: language === 'de' ? 'Hauptschlafzimmer Ansicht 3' : 'Master Bedroom View 3' }
   ];
 
   // Kleines Schlafzimmer-Bilder für ImageCarousel
   const smallBedroomImages = [
-    { src: smallBedroom, alt: language === 'de' ? 'Kleines Schlafzimmer' : 'Small Bedroom' }
+    { src: '/img/kleines_Zimmer_1756410485531.jpeg', alt: language === 'de' ? 'Kleines Schlafzimmer' : 'Small Bedroom' }
   ];
 
   // Küchen-Bilder für ImageCarousel
   const kitchenImages = [
-    { src: kitchen1, alt: language === 'de' ? 'Küche Ansicht 1' : 'Kitchen View 1' },
-    { src: kitchen2, alt: language === 'de' ? 'Küche Ansicht 2' : 'Kitchen View 2' },
-    { src: kitchen3, alt: language === 'de' ? 'Küche Ansicht 3' : 'Kitchen View 3' }
+    { src: '/img/Küche_1_1756410727198.jpeg', alt: language === 'de' ? 'Küche Ansicht 1' : 'Kitchen View 1' },
+    { src: '/img/Küche_2_1756410727199.jpeg', alt: language === 'de' ? 'Küche Ansicht 2' : 'Kitchen View 2' },
+    { src: '/img/Küche_3_1756410727201.jpeg', alt: language === 'de' ? 'Küche Ansicht 3' : 'Kitchen View 3' }
   ];
 
   // Wohnzimmer-Bilder für ImageCarousel
   const livingRoomImages = [
-    { src: livingRoom1, alt: language === 'de' ? 'Wohnzimmer Ansicht 1' : 'Living Room View 1' },
-    { src: livingRoom2, alt: language === 'de' ? 'Wohnzimmer Ansicht 2' : 'Living Room View 2' },
-    { src: livingRoom3, alt: language === 'de' ? 'Wohnzimmer Ansicht 3' : 'Living Room View 3' },
-    { src: livingRoom4, alt: language === 'de' ? 'Wohnzimmer Ansicht 4' : 'Living Room View 4' }
+    { src: '/img/Wohnzimmer_1_1756410848822.jpeg', alt: language === 'de' ? 'Wohnzimmer Ansicht 1' : 'Living Room View 1' },
+    { src: '/img/Wohnzimmer_2_1756410848824.jpeg', alt: language === 'de' ? 'Wohnzimmer Ansicht 2' : 'Living Room View 2' },
+    { src: '/img/Wohnzimmer_3_1756410848825.jpeg', alt: language === 'de' ? 'Wohnzimmer Ansicht 3' : 'Living Room View 3' },
+    { src: '/img/Wohnzimmer_4_1756410848825.jpeg', alt: language === 'de' ? 'Wohnzimmer Ansicht 4' : 'Living Room View 4' }
   ];
 
   // Badezimmer & WC-Bilder für ImageCarousel
   const bathroomImages = [
-    { src: bathroom1, alt: language === 'de' ? 'Badezimmer Ansicht 1' : 'Bathroom View 1' },
-    { src: bathroom2, alt: language === 'de' ? 'Badezimmer Ansicht 2' : 'Bathroom View 2' },
-    { src: toilet, alt: language === 'de' ? 'Separates WC' : 'Separate Toilet' }
+    { src: '/img/Bad_1_1756411014162.jpeg', alt: language === 'de' ? 'Badezimmer Ansicht 1' : 'Bathroom View 1' },
+    { src: '/img/Bad_2_1756411014162.jpeg', alt: language === 'de' ? 'Badezimmer Ansicht 2' : 'Bathroom View 2' },
+    { src: '/img/Toilet_1756411014163.jpeg', alt: language === 'de' ? 'Separates WC' : 'Separate Toilet' }
   ];
 
   // Dachterrassen-Bilder für ImageCarousel
   const terraceImages = [
-    { src: terrace1, alt: language === 'de' ? 'Dachterrasse Ansicht 1' : 'Roof Terrace View 1' },
-    { src: terrace2, alt: language === 'de' ? 'Dachterrasse Ansicht 2' : 'Roof Terrace View 2' }
+    { src: '/img/Dachterrasse_1_1756411223934.jpeg', alt: language === 'de' ? 'Dachterrasse Ansicht 1' : 'Roof Terrace View 1' },
+    { src: '/img/Dachterrasse_2_1756411223936.jpeg', alt: language === 'de' ? 'Dachterrasse Ansicht 2' : 'Roof Terrace View 2' }
   ];
 
   return (
