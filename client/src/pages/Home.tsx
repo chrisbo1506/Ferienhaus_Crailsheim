@@ -42,6 +42,12 @@ const Home: React.FC = () => {
     { src: '/img/Wohnzimmer.JPG', alt: 'Wohnzimmer' },
     { src: '/img/Kueche_1.JPEG', alt: 'Küche' }
   ];
+
+  const apartment2Images = [
+    { src: '/img/Eingang_1756409965599.jpeg', alt: 'Eingangsbereich Wohnung 2' },
+    { src: '/img/Wohnzimmer_1_1756410848822.jpeg', alt: 'Wohnzimmer Wohnung 2' },
+    { src: '/img/Dachterrasse_1_1756411223934.jpeg', alt: 'Dachterrasse' }
+  ];
   
   return (
     <div className="pb-16">
@@ -108,19 +114,8 @@ const Home: React.FC = () => {
             
             {/* Wohnung 2 */}
             <div className="card overflow-hidden hover:-translate-y-2 transition-all duration-300">
-              <div className="h-80 bg-gray-200 flex items-center justify-center" style={{ backgroundColor: '#EFE9D9', height: '300px' }}>
-                <div className="text-center p-6">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto mb-4" style={{ color: "#4A4A4A" }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
-                    <path d="M1 21h22"></path>
-                    <path d="M9 7h6"></path>
-                    <path d="M9 11h6"></path>
-                    <path d="M9 15h6"></path>
-                  </svg>
-                  <h4 className="text-xl font-heading font-medium" style={{ color: "#4A4A4A" }}>
-                    {language === 'de' ? 'Bereit für Gäste' : 'Ready for Guests'}
-                  </h4>
-                </div>
+              <div className="h-80 overflow-hidden relative" style={{ height: '300px' }}>
+                <ImageSlider images={apartment2Images} />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-heading font-bold mb-3" style={{ color: "#4A4A4A" }}>
